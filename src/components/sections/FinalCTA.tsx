@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { LeadFormModal } from "../ui/LeadFormModal";
 
 export function FinalCTA() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <section id="contato" className="py-32 relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/elementos/Gemini_Generated_Image_rcv8hgrcv8hgrcv8.webp')" }}>
       {/* Camada de sombra sólida e gradiente reforçado */}
@@ -24,18 +27,21 @@ export function FinalCTA() {
             Agende o <span className="text-brand font-semibold underline decoration-brand/30 decoration-2 underline-offset-8">ZELUS Scan</span>. Uma análise executiva do seu negócio para identificar vazamentos de lucro e riscos sanitários.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <a
-              href="https://wa.me/qr/2WOCVA4LV4JIO1"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="group px-12 py-5 bg-brand text-background font-bold rounded-full hover:bg-brand/90 transition-all duration-300 shadow-2xl shadow-brand/30 flex items-center justify-center gap-3"
             >
               Agendar Meu Scan Agora
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </button>
           </div>
         </motion.div>
       </div>
+
+      <LeadFormModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   );
 }

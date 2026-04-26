@@ -1,8 +1,9 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { HeroServico } from "@/components/sections/HeroServico";
-import { Check, ArrowRight } from "lucide-react";
+import { Check } from "lucide-react";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { LeadButton } from "@/components/ui/LeadButton";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -59,14 +60,7 @@ export default function ProcessosPage() {
             </div>
 
             <div className="mt-24 pt-12 border-t border-ink/10 text-center">
-              <a 
-                href="https://wa.me/qr/2WOCVA4LV4JIO1" 
-                target="_blank" 
-                className="inline-flex items-center gap-4 bg-brand text-background px-12 py-5 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-xl shadow-brand/20"
-              >
-                Falar com especialista
-                <ArrowRight className="w-5 h-5" />
-              </a>
+              <LeadButton />
             </div>
           </article>
         </section>

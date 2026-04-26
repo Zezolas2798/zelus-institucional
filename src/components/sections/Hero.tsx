@@ -2,8 +2,12 @@
 
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useState } from "react";
+import { LeadFormModal } from "../ui/LeadFormModal";
 
 export function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-background">
       {/* Video Background */}
@@ -57,16 +61,20 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row justify-center gap-6"
           >
-            <a
-              href="https://wa.me/qr/2WOCVA4LV4JIO1"
-              target="_blank"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="px-12 py-4 bg-brand text-[#050505] font-bold rounded-full hover:bg-[#ff7a77] transition-all duration-300 shadow-xl shadow-brand/20 hover:scale-105"
             >
               Falar com especialista
-            </a>
+            </button>
           </motion.div>
         </motion.div>
       </div>
+
+      <LeadFormModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
 
       {/* Scroll Indicator */}
       <motion.div

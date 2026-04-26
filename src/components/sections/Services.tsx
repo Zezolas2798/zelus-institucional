@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { LeadFormModal } from "../ui/LeadFormModal";
 import { 
   BarChart3, 
   Settings, 
@@ -105,6 +106,7 @@ const services = [
 
 export function Services() {
   const [activeService, setActiveService] = useState<typeof services[0] | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const detailsRef = useRef<HTMLDivElement>(null);
 
   const handleServiceClick = (service: typeof services[0]) => {
@@ -241,13 +243,12 @@ export function Services() {
                   <div className="absolute top-0 right-0 w-64 h-64 bg-brand opacity-5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
                   <h4 className="text-xl md:text-2xl font-bold text-foreground mb-4 uppercase tracking-tight italic">Pronto para transformar sua operação?</h4>
                   <p className="text-text-muted mb-8 text-base max-w-xl mx-auto opacity-80">Nossas soluções são adaptadas à realidade do seu negócio para gerar resultados imediatos.</p>
-                  <a
-                    href="https://wa.me/qr/2WOCVA4LV4JIO1"
-                    target="_blank"
+                  <button
+                    onClick={() => setIsModalOpen(true)}
                     className="inline-flex items-center gap-3 bg-brand text-background px-10 py-5 rounded-full font-bold text-lg hover:scale-105 hover:shadow-xl hover:shadow-brand/20 transition-all duration-300"
                   >
                     Falar com especialista <ArrowRight className="w-5 h-5" />
-                  </a>
+                  </button>
 
                   <button
                     onClick={() => setActiveService(null)}
@@ -261,6 +262,10 @@ export function Services() {
           )}
         </div>
       </div>
+      <LeadFormModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   );
 }
