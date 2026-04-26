@@ -2,7 +2,7 @@ import { ScrollReveal } from "../animations/ScrollReveal";
 
 export function AboutZelus() {
   return (
-    <section id="sobre" className="py-24 relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/elementos/Gemini_Generated_Image_rcv8hgrcv8hgrcv8.webp')" }}>
+    <section id="sobre" className="py-24 relative overflow-hidden bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/elementos/Gemini_Generated_Image_e9ov1ue9ov1ue9ov.webp')" }}>
       <div className="absolute inset-0 bg-background/60 z-0"></div>
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-brand opacity-[0.03] rounded-full blur-[100px] pointer-events-none z-0"></div>
 
