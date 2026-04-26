@@ -1,0 +1,169 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #080808;
+  --foreground: #FEFEFE;
+  --brand: #FE615E;
+  --surface: #121212;
+  --text-muted: #C8C8C9;
+  
+  --card: #121212;
+  --card-foreground: #FEFEFE;
+  --popover: #121212;
+  --popover-foreground: #FEFEFE;
+  --primary: #FE615E;
+  --primary-foreground: #080808;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #FEFEFE;
+  --muted: #1a1a1a;
+  --muted-foreground: #C8C8C9;
+  --accent: #1a1a1a;
+  --accent-foreground: #FEFEFE;
+  --destructive: #ef4444;
+  --destructive-foreground: #FEFEFE;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #FE615E;
+  --radius: 0.5rem;
+
+  /* Paper Theme */
+  --paper: #FDFBF7;
+  --ink: #1A1A1A;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: var(--brand);
+  --color-surface: var(--surface);
+  --color-text-muted: var(--text-muted);
+
+  --font-display: var(--font-montserrat);
+  --font-body: var(--font-dm-sans);
+  --font-branding: var(--font-syncopate);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body), sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-display), sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  .font-branding {
+    font-family: var(--font-branding), sans-serif;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+}
+
+::selection {
+  background-color: var(--brand);
+  color: #050505;
+}
+
+/* Custom Scrollbar ZELUS */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand);
+}
+
+@layer utilities {
+  .bg-paper {
+    background-color: var(--paper);
+  }
+  .text-ink {
+    color: var(--ink);
+  }
+  .paper-texture {
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    opacity: 0.03;
+  }
+
+  .mobile-carousel {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    scroll-snap-type: none;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .mobile-carousel {
+      display: grid !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      overflow-x: visible !important;
+    }
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .glass-mobile-fix {
+    @media (max-width: 768px) {
+      background-color: rgba(255, 255, 255, 0.08) !important;
+      backdrop-filter: blur(20px) !important;
+    }
+  }
+}
