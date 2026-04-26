@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, MessageSquare, ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation";
@@ -42,11 +43,13 @@ export function Navbar() {
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo & Back Button Container */}
         <div className="flex items-center gap-6">
-          <Link href="/" className="flex-shrink-0 flex items-center zelus-brand-container zelus-reveal">
-            <img 
+          <Link href="/" className="relative flex-shrink-0 flex items-center zelus-brand-container zelus-reveal h-14 w-32">
+            <Image 
               src="/logos/zelus-icon-official.svg" 
               alt="ZELUS Logo" 
-              className="h-14 w-auto zelus-icon-only" 
+              fill
+              priority
+              className="object-contain zelus-icon-only" 
             />
           </Link>
           

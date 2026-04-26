@@ -1,7 +1,4 @@
-"use client";
-
-import Link from "next/link";
-import { Instagram } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,11 +8,14 @@ export function Footer() {
       <div className="absolute inset-0 paper-texture opacity-[0.03] pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <img 
-          src="/logos/zelus-icon-official.svg" 
-          alt="ZELUS" 
-          className="h-8 w-auto mx-auto mb-6 opacity-30 brightness-0 invert" 
-        />
+        <div className="relative h-8 w-8 mx-auto mb-6 opacity-30 brightness-0 invert">
+          <Image 
+            src="/logos/zelus-icon-official.svg" 
+            alt="ZELUS" 
+            fill
+            className="object-contain" 
+          />
+        </div>
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-text-muted/40 text-[10px] tracking-[0.4em] uppercase font-branding">ZELUS | Autoridade em Soluções Alimentares</p>
           <p className="text-text-muted/20 text-[9px] uppercase tracking-widest">© {currentYear} Zelus Consultoria Alimentar</p>

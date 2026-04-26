@@ -1,13 +1,9 @@
-"use client";
-
-import { motion } from "framer-motion";
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
-import { LeadFormModal } from "../ui/LeadFormModal";
+import { LeadButton } from "../ui/LeadButton";
+import { ScrollReveal } from "../animations/ScrollReveal";
 
 export function Hero() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-background">
       {/* Video Background */}
@@ -30,7 +26,7 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center pt-20">
-        <motion.div
+        <ScrollReveal
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -45,52 +41,43 @@ export function Hero() {
           </h1>
 
           <div className="flex items-center justify-center gap-4 md:gap-5 mt-4 mb-16">
-            <img 
-              src="/logos/zelus-icon-official.svg" 
-              alt="ZELUS Icon" 
-              className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto brightness-0 invert" 
-            />
+            <div className="relative h-12 sm:h-16 md:h-20 lg:h-24 w-auto aspect-square">
+              <Image 
+                src="/logos/zelus-icon-official.svg" 
+                alt="ZELUS Icon" 
+                fill
+                priority
+                className="object-contain brightness-0 invert" 
+              />
+            </div>
             <span className="font-branding text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-foreground font-bold tracking-[0.2em] uppercase leading-none drop-shadow-2xl">
               ZELUS
             </span>
           </div>
 
-          <motion.div
+          <ScrollReveal
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row justify-center gap-6"
           >
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="px-12 py-4 bg-brand text-[#050505] font-bold rounded-full hover:bg-[#ff7a77] transition-all duration-300 shadow-xl shadow-brand/20 hover:scale-105"
-            >
+            <LeadButton className="px-12 py-4 bg-brand text-[#050505] font-bold rounded-full hover:bg-[#ff7a77] transition-all duration-300 shadow-xl shadow-brand/20 hover:scale-105">
               Falar com especialista
-            </button>
-          </motion.div>
-        </motion.div>
+            </LeadButton>
+          </ScrollReveal>
+        </ScrollReveal>
       </div>
 
-      <LeadFormModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-      />
-
       {/* Scroll Indicator */}
-      <motion.div
+      <ScrollReveal
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-text-muted flex flex-col items-center gap-2"
       >
         <span className="text-[10px] uppercase tracking-[0.3em] font-branding">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <ChevronDown size={20} />
-        </motion.div>
-      </motion.div>
+        <ChevronDown size={20} className="animate-bounce" />
+      </ScrollReveal>
     </section>
   );
 }

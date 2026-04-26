@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { LeadFormModal } from "../ui/LeadFormModal";
@@ -170,10 +171,12 @@ export function Services() {
                 activeService?.title === service.title ? 'border-brand ring-2 ring-brand/20' : 'border-white/10'
               } hover:border-brand/40 bg-surface cursor-pointer min-w-[78vw] md:min-w-0`}
             >
-              <img
+              <Image
                 src={service.image}
                 alt={service.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-30"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-30"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-90 transition-opacity duration-500"></div>
 

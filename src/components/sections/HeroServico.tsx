@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -17,11 +18,12 @@ export function HeroServico({ title, subtitle, highlight, image, stepNumber }: H
     <header className="relative pt-64 pb-32 overflow-hidden bg-background">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0 opacity-60">
-        <img 
-          loading="lazy" 
+        <Image 
           src={image} 
           alt={title} 
-          className="w-full h-full object-cover" 
+          fill
+          priority
+          className="object-cover" 
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/50 to-background"></div>
       </div>

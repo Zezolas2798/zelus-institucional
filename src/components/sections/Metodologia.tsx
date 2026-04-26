@@ -1,7 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import { ScrollReveal } from "../animations/ScrollReveal";
 
 const steps = [
   {
@@ -42,37 +41,39 @@ export function Metodologia() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
-          <motion.span 
+          <ScrollReveal
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="text-brand font-semibold tracking-wider uppercase text-sm mb-2 block"
           >
             Processo em 4 Etapas
-          </motion.span>
-          <motion.h2 
+          </ScrollReveal>
+          <ScrollReveal
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-5xl font-bold text-foreground mb-6"
           >
-            A Metodologia ZELUS
-          </motion.h2>
-          <motion.p 
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground">A Metodologia ZELUS</h2>
+          </ScrollReveal>
+          <ScrollReveal
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-lg text-text-muted max-w-3xl mx-auto"
           >
-            Não usamos manuais de gaveta. Entramos na sua operação para resolver problemas estruturais e garantir independência técnica e lucro.
-          </motion.p>
+            <p className="text-lg text-text-muted">
+              Não usamos manuais de gaveta. Entramos na sua operação para resolver problemas estruturais e garantir independência técnica e lucro.
+            </p>
+          </ScrollReveal>
         </div>
 
         <div className="mobile-carousel md:grid-cols-2 lg:grid-cols-4 scrollbar-hide">
           {steps.map((step, idx) => (
-            <motion.div
+            <ScrollReveal
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -81,10 +82,12 @@ export function Metodologia() {
               className="group relative aspect-[3/2] overflow-hidden rounded-2xl border border-white/10 hover:border-brand/40 transition-all duration-500 min-w-[70vw] md:min-w-0"
             >
               {/* Background Image */}
-              <img
+              <Image
                 src={step.image}
                 alt={step.title}
-                className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-110 opacity-50"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                className="object-cover transition-all duration-700 group-hover:scale-110 opacity-50"
               />
 
               {/* Gradient Overlay */}
@@ -106,7 +109,7 @@ export function Metodologia() {
                   <span className="w-4 h-[1px] bg-brand/30 group-hover:w-6 group-hover:bg-brand transition-all duration-300"></span>
                 </div>
               </div>
-            </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

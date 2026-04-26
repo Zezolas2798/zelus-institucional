@@ -1,7 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import { ScrollReveal } from "../animations/ScrollReveal";
 
 const pains = [
   {
@@ -31,40 +30,32 @@ export function PainPoints() {
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-foreground mb-4"
-          >
-            Sua operação está sangrando dinheiro?
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-text-muted max-w-2xl mx-auto font-medium"
-          >
-            A ZELUS resolve o que os outros apenas apontam. Transformamos o caos em lucro.
-          </motion.p>
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+              Sua operação está sangrando dinheiro?
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal transition={{ delay: 0.2 }}>
+            <p className="text-lg text-text-muted max-w-2xl mx-auto font-medium">
+              A ZELUS resolve o que os outros apenas apontam. Transformamos o caos em lucro.
+            </p>
+          </ScrollReveal>
         </div>
 
         <div className="mobile-carousel md:grid-cols-3 scrollbar-hide">
           {pains.map((pain, idx) => (
-            <motion.div
+            <ScrollReveal
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ delay: idx * 0.15 }}
               className="group relative aspect-[3/2] rounded-2xl overflow-hidden shadow-2xl border border-white/10 hover:border-brand/30 transition-all duration-500 min-w-[78vw] md:min-w-0"
             >
               {/* Background Image */}
-              <img
+              <Image
                 src={pain.bgImage}
                 alt={pain.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-60"
               />
 
               {/* Gradient Overlay */}
@@ -87,7 +78,7 @@ export function PainPoints() {
                   <div className="w-8 h-[1px] bg-brand group-hover:bg-foreground transition-all origin-left"></div>
                 </div>
               </div>
-            </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
