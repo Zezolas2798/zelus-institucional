@@ -30,7 +30,7 @@ export default function ImplementacaoPage() {
           
           <article className="max-w-[800px] mx-auto px-6 relative z-10 text-lg md:text-xl font-light text-ink/90">
             
-            <p className="font-medium text-2xl md:text-3xl text-ink mb-12 leading-relaxed italic">
+            <p className="font-medium text-2xl md:text-3xl text-ink mb-12 leading-relaxed">
               Nesta fase, saímos do papel e partimos para a execução. É o momento de construir uma nova cultura no seu negócio, garantindo que cada processo seja seguido com excelência.
             </p>
 
@@ -38,22 +38,22 @@ export default function ImplementacaoPage() {
 
             <div className="space-y-12 my-12">
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Treinamentos Práticos</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Treinamentos Práticos</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Capacitamos sua equipe para que entendam o "porquê" de cada mudança, gerando conscientização e engajamento.</p>
               </div>
 
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Documentação Viva</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Documentação Viva</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Construímos o Manual de Boas Práticas, POPs e planilhas de controle baseados na realidade do seu dia a dia, e não apenas para "cumprir tabela".</p>
               </div>
 
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Padronização e Controle</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Padronização e Controle</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Implementamos ferramentas como fichas técnicas e tabelas nutricionais para garantir a qualidade e o lucro de cada produto.</p>
               </div>
 
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Acompanhamento Periódico</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Acompanhamento Periódico</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Estamos presentes para ajustar processos em tempo real e garantir que os resultados sejam sustentáveis.</p>
               </div>
             </div>

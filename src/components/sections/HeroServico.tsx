@@ -42,9 +42,9 @@ export function HeroServico({ title, subtitle, highlight, image, stepNumber }: H
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-5xl md:text-7xl font-bold text-foreground mb-8 tracking-tight leading-tight uppercase italic"
+            className="text-3xl sm:text-5xl md:text-7xl font-bold text-foreground mb-8 tracking-tight leading-tight"
           >
-            {title} <span className="font-light text-brand not-italic">{highlight}</span>
+            {title} <span className="font-light text-brand">{highlight}</span>
           </motion.h1>
         </div>
       </div>

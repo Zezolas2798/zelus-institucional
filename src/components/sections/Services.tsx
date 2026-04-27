@@ -143,7 +143,7 @@ export function Services() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight italic uppercase"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight"
           >
             Catálogo de Serviços
           </motion.h2>
@@ -215,7 +215,7 @@ export function Services() {
                   </div>
                   <div>
                     <span className="text-brand text-[10px] font-bold uppercase tracking-[0.3em]">Catálogo Detalhado</span>
-                    <h3 className="text-xl md:text-2xl font-bold uppercase italic">{activeService.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold">{activeService.title}</h3>
                   </div>
                 </div>
                 <button
@@ -244,7 +244,7 @@ export function Services() {
 
                 <div className="mt-16 p-8 md:p-12 bg-background rounded-3xl text-center shadow-2xl relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-brand opacity-5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
-                  <h4 className="text-xl md:text-2xl font-bold text-foreground mb-4 uppercase tracking-tight italic">Pronto para transformar sua operação?</h4>
+                  <h4 className="text-xl md:text-2xl font-bold text-foreground mb-4 tracking-tight">Pronto para transformar sua operação?</h4>
                   <p className="text-text-muted mb-8 text-base max-w-xl mx-auto opacity-80">Nossas soluções são adaptadas à realidade do seu negócio para gerar resultados imediatos.</p>
                   <button
                     onClick={() => setIsModalOpen(true)}

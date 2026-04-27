@@ -30,7 +30,7 @@ export default function CMVPage() {
           
           <article className="max-w-[800px] mx-auto px-6 relative z-10 text-lg md:text-xl font-light text-ink/90">
             
-            <p className="font-medium text-2xl md:text-3xl text-ink mb-12 leading-relaxed italic">
+            <p className="font-medium text-2xl md:text-3xl text-ink mb-12 leading-relaxed">
               CMV Descontrolado: Onde o seu lucro está escorrendo?
             </p>
 
@@ -42,22 +42,22 @@ export default function CMVPage() {
 
             <div className="space-y-12 my-12">
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Fichas Técnicas Precisas</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Fichas Técnicas Precisas</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Padronizamos cada prato para que você saiba exatamente quanto gasta e quanto lucra em cada venda. Sem "olhômetro"!</p>
               </div>
 
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Controle de Desperdícios</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Controle de Desperdícios</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Identificamos falhas no armazenamento e na manipulação que fazem insumos caros irem direto para o lixo.</p>
               </div>
 
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Gestão de Compras e Estoque</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Gestão de Compras e Estoque</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Implementamos processos para evitar compras desnecessárias e garantir que o seu dinheiro não fique parado em prateleiras.</p>
               </div>
 
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Engenharia de Cardápio</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Engenharia de Cardápio</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Analisamos quais itens realmente trazem margem e quais estão apenas ocupando espaço, otimizando sua lucratividade.</p>
               </div>
             </div>

@@ -15,7 +15,7 @@ export function AboutZelus() {
         >
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-8">A Visão ZELUS</h2>
           <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed font-normal">
-            "Acreditamos que no setor de alimentação nada funciona isolado. Nossa visão é baseada no{" "}
+            &quot;Acreditamos que no setor de alimentação nada funciona isolado. Nossa visão é baseada no{" "}
             <strong className="text-foreground font-semibold underline decoration-brand/30 decoration-2 underline-offset-4">
               Método ZELUS
             </strong>
@@ -23,7 +23,7 @@ export function AboutZelus() {
             <strong className="text-foreground font-semibold underline decoration-brand/30 decoration-2 underline-offset-4">
               independentes, seguras e altamente rentáveis
             </strong>
-            ."
+            .&quot;
           </p>
         </ScrollReveal>
       </div>

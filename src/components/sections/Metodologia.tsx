@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal } from "../animations/ScrollReveal";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const steps = [
   {
@@ -34,83 +38,107 @@ const steps = [
 ];
 
 export function Metodologia() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
-    <section id="metodologia" className="py-20 md:py-32 relative bg-background border-y border-white/5 overflow-hidden">
-      {/* Subtle background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand opacity-[0.015] rounded-full blur-[150px] pointer-events-none"></div>
+    <section id="metodologia" ref={containerRef} className="py-24 md:py-48 relative bg-background border-y border-white/5 overflow-hidden">
+      {/* Main Background Image - Increased visibility */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/elementos/Gemini_Generated_Image_cocf2mcocf2mcocf.webp"
+          alt="Zelus Methodology Background"
+          fill
+          className="object-cover opacity-25"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/40 to-background"></div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
-          <ScrollReveal
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-brand font-semibold tracking-wider uppercase text-sm mb-2 block"
-          >
-            Processo em 4 Etapas
+        <div className="text-center mb-32">
+          <ScrollReveal>
+            <span className="text-brand font-semibold tracking-wider uppercase text-sm mb-2 block">
+              Processo em 4 Etapas
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+              A Metodologia ZELUS
+            </h2>
           </ScrollReveal>
-          <ScrollReveal
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold text-foreground mb-6"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground">A Metodologia ZELUS</h2>
-          </ScrollReveal>
-          <ScrollReveal
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-text-muted max-w-3xl mx-auto"
-          >
-            <p className="text-lg text-text-muted">
+          <ScrollReveal transition={{ delay: 0.2 }}>
+            <p className="text-text-muted text-lg font-light leading-relaxed max-w-3xl mx-auto">
               Não usamos manuais de gaveta. Entramos na sua operação para resolver problemas estruturais e garantir independência técnica e lucro.
             </p>
           </ScrollReveal>
         </div>
 
-        <div className="mobile-carousel md:grid-cols-2 lg:grid-cols-4 scrollbar-hide">
-          {steps.map((step, idx) => (
-            <ScrollReveal
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.15 }}
-              className="group relative aspect-[3/2] overflow-hidden rounded-2xl border border-white/10 hover:border-brand/40 transition-all duration-500 min-w-[70vw] md:min-w-0"
-            >
-              {/* Background Image */}
-              <Image
-                src={step.image}
-                alt={step.title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                className="object-cover transition-all duration-700 group-hover:scale-110 opacity-50"
+        <div className="relative min-h-[500px] md:min-h-[600px]">
+          {/* SVG Zigzag Line (Desktop only) - Connecting Numbers statically */}
+          <div className="hidden md:block absolute inset-0 pointer-events-none z-10">
+            <svg viewBox="0 0 1280 600" className="w-full h-full" preserveAspectRatio="none">
+              <motion.path
+                d="M 84,40 L 404,200 L 724,40 L 1044,200"
+                fill="none"
+                stroke="var(--brand)"
+                strokeWidth="2.5"
+                strokeDasharray="8 4"
+                initial={{ pathLength: 1, opacity: 0.4 }}
               />
+              {/* Connector Points exactly at numbers */}
+              <circle cx="84" cy="40" r="6" fill="var(--brand)" className="opacity-80" />
+              <circle cx="404" cy="200" r="6" fill="var(--brand)" className="opacity-80" />
+              <circle cx="724" cy="40" r="6" fill="var(--brand)" className="opacity-80" />
+              <circle cx="1044" cy="200" r="6" fill="var(--brand)" className="opacity-80" />
+            </svg>
+          </div>
 
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90 transition-opacity duration-500"></div>
+          <div className="mobile-carousel md:grid md:grid-cols-4 md:gap-4 md:justify-items-center scrollbar-hide md:items-start relative z-20">
+            {steps.map((step, idx) => {
+              const isEven = idx % 2 === 0;
+              return (
+                <div 
+                  key={idx} 
+                  className={`flex flex-col items-center md:items-start text-center md:text-left transition-all duration-700 min-w-[85vw] md:min-w-0 px-4 md:px-0 ${
+                    !isEven ? 'md:mt-40' : ''
+                  }`}
+                >
+                  <ScrollReveal transition={{ delay: idx * 0.1 }}>
+                    <Link href={step.link} className="group relative block">
+                      {/* Number tag - Exact connection point */}
+                      <span className="absolute -top-3 -left-3 z-30 w-8 h-8 bg-surface border border-brand rounded-full flex items-center justify-center text-[10px] font-branding text-brand group-hover:bg-brand group-hover:text-background transition-all duration-500 shadow-[0_0_20px_rgba(254,97,94,0.4)]">
+                        {step.num}
+                      </span>
+                      
+                      {/* Card Image */}
+                      <div className="relative w-36 h-36 md:w-32 md:h-32 rounded-2xl overflow-hidden border border-white/10 group-hover:border-brand transition-all duration-700 bg-surface/30 backdrop-blur-sm shadow-2xl">
+                        <Image
+                          src={step.image}
+                          alt={step.title}
+                          fill
+                          className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-80"></div>
+                      </div>
 
-              {/* Link Wrapper */}
-              <Link href={step.link} className="absolute inset-0 z-30" aria-label={`Saber mais sobre ${step.title}`} />
-
-              {/* Content */}
-              <div className="absolute inset-0 p-6 flex flex-col justify-end text-left pointer-events-none">
-                <h3 className="text-lg font-medium text-foreground mb-1 group-hover:text-brand transition-colors">
-                  {step.title}
-                </h3>
-                <p className="text-[12px] text-foreground/70 leading-snug opacity-90 group-hover:opacity-100 transition-all duration-500 mb-3">
-                  {step.desc}
-                </p>
-                <div className="text-[9px] uppercase tracking-[0.2em] text-brand/80 group-hover:text-brand font-bold flex items-center gap-1.5 transition-colors">
-                  Saiba Mais
-                  <span className="w-4 h-[1px] bg-brand/30 group-hover:w-6 group-hover:bg-brand transition-all duration-300"></span>
+                      {/* Content Below */}
+                      <div className="mt-8 md:pr-4">
+                        <h3 className="text-lg font-bold text-foreground mb-3 uppercase tracking-tight group-hover:text-brand transition-colors">
+                          {step.title}
+                        </h3>
+                        <p className="text-[13px] text-text-muted leading-relaxed font-light mb-4 line-clamp-3">
+                          {step.desc}
+                        </p>
+                        
+                        <div className="inline-flex items-center gap-2 text-[9px] uppercase tracking-widest font-bold text-brand group-hover:text-foreground transition-colors">
+                          Saber mais
+                          <div className="w-4 h-[1px] bg-brand group-hover:w-8 group-hover:bg-foreground transition-all"></div>
+                        </div>
+                      </div>
+                    </Link>
+                  </ScrollReveal>
                 </div>
-              </div>
-            </ScrollReveal>
-          ))}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

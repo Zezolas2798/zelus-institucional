@@ -31,7 +31,7 @@ export function ObrigadoContent() {
           </div>
         </div>
         
-        <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4 uppercase tracking-tighter italic">
+        <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tighter">
           Solicitação Recebida!
         </h1>
         

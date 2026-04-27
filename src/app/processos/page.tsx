@@ -31,8 +31,8 @@ export default function ProcessosPage() {
           
           <article className="max-w-[800px] mx-auto px-6 relative z-10 text-lg md:text-xl font-light text-ink/90">
             
-            <p className="font-medium text-2xl md:text-3xl text-ink mb-12 leading-relaxed italic">
-              O caos operacional é um dos maiores ladrões de tempo e lucro. Quando a equipe não sabe exatamente o que fazer, o dono do negócio vira "escravo" da operação.
+            <p className="font-medium text-2xl md:text-3xl text-ink mb-12 leading-relaxed">
+              O caos operacional é um dos maiores ladrões de tempo e lucro. Quando a equipe não sabe exatamente o que fazer, o dono do negócio vira &quot;escravo&quot; da operação.
             </p>
 
             <p className="mb-12">
@@ -44,17 +44,17 @@ export default function ProcessosPage() {
 
             <div className="space-y-12 my-12">
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Mapeamento de Fluxos</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Mapeamento de Fluxos</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Identificamos gargalos e reorganizamos o layout para que a produção seja mais rápida e eficiente.</p>
               </div>
 
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Cultura e Engajamento</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Cultura e Engajamento</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Treinamos a equipe para que entendam o impacto do seu trabalho, gerando autonomia e responsabilidade.</p>
               </div>
 
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Padronização Inteligente</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Padronização Inteligente</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Criamos processos que funcionam na vida real, permitindo que o negócio rode com excelência, mesmo sem a presença constante do dono.</p>
               </div>
             </div>

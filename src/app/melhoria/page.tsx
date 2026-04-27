@@ -31,7 +31,7 @@ export default function MelhoriaPage() {
           
           <article className="max-w-[800px] mx-auto px-6 relative z-10 text-lg md:text-xl font-light text-ink/90">
             
-            <p className="font-medium text-2xl md:text-3xl text-ink mb-12 leading-relaxed italic">
+            <p className="font-medium text-2xl md:text-3xl text-ink mb-12 leading-relaxed">
               A consultoria não termina na implementação. Nesta fase, focamos em consolidar os resultados alcançados e identificar novas oportunidades para que o seu negócio continue evoluindo e lucrando cada vez mais.
             </p>
 
@@ -39,22 +39,22 @@ export default function MelhoriaPage() {
 
             <div className="space-y-12 my-12">
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Mensuração de Impacto</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Mensuração de Impacto</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Analisamos os indicadores de sucesso, como redução de desperdícios, aumento da produtividade e conformidade sanitária.</p>
               </div>
 
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Relatório de Resultados</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Relatório de Resultados</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Uma apresentação clara das transformações conquistadas, reforçando o valor do investimento realizado.</p>
               </div>
 
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Identificação de Novas Oportunidades</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Identificação de Novas Oportunidades</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Com a casa em ordem, olhamos para o futuro. Podemos explorar novos serviços, como expansão de cardápio, rotulagem nutricional ou novos controles de gestão.</p>
               </div>
 
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Manutenção da Cultura</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Manutenção da Cultura</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Garantimos que as boas práticas se tornem um hábito permanente, evitando que a operação retroceda.</p>
               </div>
             </div>

@@ -10,8 +10,8 @@ export function Preloader() {
 
   useEffect(() => {
     // Flag global para evitar re-execução em navegação client-side do Next.js
-    // Esta variável é resetada no F5 ou carregamento inicial, mas persiste no 'Voltar' ou troca de páginas
-    if (typeof window !== "undefined" && (window as any).__ZELUS_PRELOADER_PLAYED__) {
+    const win = window as any;
+    if (typeof window !== "undefined" && win.__ZELUS_PRELOADER_PLAYED__) {
       setIsVisible(false);
       return;
     }
@@ -97,7 +97,9 @@ export function Preloader() {
 
     // Fail-safe absoluto: 5s
     const failSafe = setTimeout(() => {
-      (window as any).__ZELUS_PRELOADER_PLAYED__ = true;
+      if (typeof window !== "undefined") {
+        (window as any).__ZELUS_PRELOADER_PLAYED__ = true;
+      }
       setIsVisible(false);
     }, 5000);
 

@@ -66,7 +66,7 @@ export function PainPoints() {
 
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-8 z-20 pointer-events-none">
-                <h3 className="text-xl md:text-2xl font-bold text-foreground uppercase tracking-tighter italic">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground tracking-tighter">
                   {pain.title}
                 </h3>
                 <p className="text-sm md:text-base text-foreground/70 leading-relaxed font-light mb-6">

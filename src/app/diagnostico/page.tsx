@@ -31,7 +31,7 @@ export default function DiagnosticoPage() {
           
           <article className="max-w-[800px] mx-auto px-6 relative z-10 text-lg md:text-xl font-light text-ink/90">
             
-            <p className="font-medium text-2xl md:text-3xl text-ink mb-12 leading-relaxed italic">
+            <p className="font-medium text-2xl md:text-3xl text-ink mb-12 leading-relaxed">
               Diagnóstico 360º: O ponto de partida da nossa consultoria
             </p>
 
@@ -65,17 +65,17 @@ export default function DiagnosticoPage() {
 
             <div className="space-y-12 my-12">
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Visão Sistêmica</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Visão Sistêmica</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Enxergamos além da legislação, focando em resultados práticos e organização.</p>
               </div>
 
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Clareza Visual</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Clareza Visual</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Utilizamos fotos reais para que você veja exatamente onde estão os gargalos.</p>
               </div>
 
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Segurança e Economia</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Segurança e Economia</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Identificamos onde você pode estar perdendo dinheiro ou correndo riscos desnecessários.</p>
               </div>
             </div>

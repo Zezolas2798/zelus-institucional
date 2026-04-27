@@ -39,17 +39,17 @@ export default function PlanejamentoPage() {
 
             <div className="space-y-12 my-12">
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Plano de Trabalho Personalizado</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Plano de Trabalho Personalizado</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Um cronograma com ações, responsáveis e prazos, focado nas dores reais do seu negócio.</p>
               </div>
 
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Soluções Rápidas (Quick Wins)</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Soluções Rápidas (Quick Wins)</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Ajustes práticos de baixo custo e alto impacto, como reorganização de layout, padronização de etiquetas ou melhorias em processos de manipulação.</p>
               </div>
 
               <div className="border-l-2 border-brand/30 pl-8">
-                <h3 className="font-bold text-xl mb-3 italic text-ink">Engajamento da Equipe</h3>
+                <h3 className="font-bold text-xl mb-3 text-ink">Engajamento da Equipe</h3>
                 <p className="text-base md:text-lg opacity-80 mb-0 text-ink/80">Resultados rápidos motivam os colaboradores e mostram que a mudança é possível e benéfica para todos.</p>
               </div>
             </div>
