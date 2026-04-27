@@ -71,43 +71,53 @@ export function Metodologia() {
           </ScrollReveal>
         </div>
 
-        <div className="mobile-carousel md:grid md:grid-cols-4 md:gap-4 md:justify-items-center scrollbar-hide md:items-start relative z-20 overflow-x-auto min-h-[500px] md:min-h-[600px] pt-16">
-          {/* 
-              SVG Zigzag Line - Desktop & Mobile 
-              Precise alignment with the number tags on the left (-left-3)
-          */}
+        {/* 
+            Container with pt-16 (64px) to clear the top area. 
+            The cards and SVG are relative to this container.
+        */}
+        <div className="mobile-carousel md:grid md:grid-cols-4 md:gap-4 md:justify-items-center scrollbar-hide md:items-start relative z-20 overflow-x-auto min-h-[500px] md:min-h-[650px] pt-16">
+          
+          {/* SVG Connector Layer */}
           <div className="absolute inset-0 pointer-events-none z-10 overflow-visible min-w-max md:min-w-0">
-            {/* Desktop SVG - Back to the working 84, 404... coordinates */}
-            <svg viewBox="0 0 1280 600" className="hidden md:block w-full h-full" preserveAspectRatio="none">
+            {/* 
+                Desktop SVG 
+                X: 160, 480, 800, 1120 (Column centers)
+                Y: 52 (pt-16 - 12px for tag), 212 (pt-16 + mt-40 - 12px)
+            */}
+            <svg viewBox="0 0 1280 650" className="hidden md:block w-full h-full" preserveAspectRatio="none">
               <motion.path
-                d="M 84,15 L 404,175 L 724,15 L 1044,175"
+                d="M 160,52 L 480,212 L 800,52 L 1120,212"
                 fill="none"
                 stroke="var(--brand)"
                 strokeWidth="2.5"
                 strokeDasharray="8 4"
                 initial={{ pathLength: 1, opacity: 0.4 }}
               />
-              <circle cx="84" cy="15" r="6" fill="var(--brand)" className="opacity-80" />
-              <circle cx="404" cy="175" r="6" fill="var(--brand)" className="opacity-80" />
-              <circle cx="724" cy="15" r="6" fill="var(--brand)" className="opacity-80" />
-              <circle cx="1044" cy="175" r="6" fill="var(--brand)" className="opacity-80" />
+              <circle cx="160" cy="52" r="6" fill="var(--brand)" className="opacity-80" />
+              <circle cx="480" cy="212" r="6" fill="var(--brand)" className="opacity-80" />
+              <circle cx="800" cy="52" r="6" fill="var(--brand)" className="opacity-80" />
+              <circle cx="1120" cy="212" r="6" fill="var(--brand)" className="opacity-80" />
             </svg>
 
-            {/* Mobile SVG - Fixed coordinates for 280px cards starting at 24px PL */}
+            {/* 
+                Mobile SVG 
+                X: 164, 468, 772, 1076 (Card centers in 280px + 24px gap flow)
+                Y: 52 (pt-16 - 12px), 148 (pt-16 + mt-24 - 12px)
+            */}
             <div className="md:hidden flex h-full" style={{ width: '1240px' }}>
-              <svg viewBox="0 0 1240 600" className="w-full h-full" preserveAspectRatio="none">
+              <svg viewBox="0 0 1240 650" className="w-full h-full" preserveAspectRatio="none">
                 <path
-                  d="M 36,15 L 340,175 L 644,15 L 948,175"
+                  d="M 164,52 L 468,148 L 772,52 L 1076,148"
                   fill="none"
                   stroke="var(--brand)"
                   strokeWidth="3"
                   strokeDasharray="10 5"
                   className="opacity-40"
                 />
-                <circle cx="36" cy="15" r="8" fill="var(--brand)" />
-                <circle cx="340" cy="175" r="8" fill="var(--brand)" />
-                <circle cx="644" cy="15" r="8" fill="var(--brand)" />
-                <circle cx="948" cy="175" r="8" fill="var(--brand)" />
+                <circle cx="164" cy="52" r="8" fill="var(--brand)" />
+                <circle cx="468" cy="148" r="8" fill="var(--brand)" />
+                <circle cx="772" cy="52" r="8" fill="var(--brand)" />
+                <circle cx="1076" cy="148" r="8" fill="var(--brand)" />
               </svg>
             </div>
           </div>
@@ -117,19 +127,19 @@ export function Metodologia() {
             return (
               <div 
                 key={idx} 
-                className={`flex flex-col items-start text-left transition-all duration-700 min-w-[280px] md:w-32 relative z-20 ${
+                className={`flex flex-col items-center transition-all duration-700 min-w-[280px] md:min-w-0 px-6 md:px-0 relative z-20 ${
                   !isEven ? 'mt-24 md:mt-40' : 'mt-0'
                 }`}
               >
                 <ScrollReveal transition={{ delay: idx * 0.1 }}>
-                  <Link href={step.link} className="group relative block">
-                    {/* Number tag - Reverted to left alignment (-left-3) */}
-                    <span className="absolute -top-3 -left-3 z-30 w-8 h-8 bg-surface border border-brand rounded-full flex items-center justify-center text-[10px] font-branding text-brand group-hover:bg-brand group-hover:text-background transition-all duration-500 shadow-[0_0_20px_rgba(254,97,94,0.4)]">
+                  <Link href={step.link} className="group relative block text-center">
+                    {/* Number tag - Centered vertically and horizontally at the exact point */}
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 z-30 w-8 h-8 bg-surface border border-brand rounded-full flex items-center justify-center text-[10px] font-branding text-brand group-hover:bg-brand group-hover:text-background transition-all duration-500 shadow-[0_0_20px_rgba(254,97,94,0.4)]">
                       {step.num}
                     </span>
                     
                     {/* Card Image */}
-                    <div className="relative w-40 h-40 md:w-32 md:h-32 rounded-2xl overflow-hidden border border-white/10 group-hover:border-brand transition-all duration-700 bg-surface/30 backdrop-blur-sm shadow-2xl">
+                    <div className="relative w-40 h-40 md:w-32 md:h-32 rounded-2xl overflow-hidden border border-white/10 group-hover:border-brand transition-all duration-700 bg-surface/30 backdrop-blur-sm shadow-2xl mx-auto">
                       <Image
                         src={step.image}
                         alt={step.title}
@@ -140,7 +150,7 @@ export function Metodologia() {
                     </div>
 
                     {/* Content Below */}
-                    <div className="mt-8 pr-4">
+                    <div className="mt-8 px-2">
                       <h3 className="text-lg font-bold text-foreground mb-3 uppercase tracking-tight group-hover:text-brand transition-colors">
                         {step.title}
                       </h3>
