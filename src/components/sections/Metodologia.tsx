@@ -43,15 +43,17 @@ export function Metodologia() {
   return (
     <section id="metodologia" ref={containerRef} className="py-24 md:py-48 relative bg-background border-y border-white/5 overflow-hidden">
       {/* Main Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="ambient-glow top-[10%] right-[10%] opacity-20"></div>
+        <div className="ambient-glow bottom-[20%] left-[5%] opacity-15"></div>
         <Image
-          src="/elementos/Gemini_Generated_Image_cocf2mcocf2mcocf.webp"
+          src="/elementos/metodologia-bg.webp"
           alt="Zelus Methodology Background"
           fill
-          className="object-cover opacity-25"
+          className="object-cover opacity-30"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/40 to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/40"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -139,7 +141,7 @@ export function Metodologia() {
                     </span>
                     
                     {/* Card Image */}
-                    <div className="relative w-40 h-40 md:w-32 md:h-32 rounded-2xl overflow-hidden border border-white/10 group-hover:border-brand transition-all duration-700 bg-surface/30 backdrop-blur-sm shadow-2xl mx-auto">
+                    <div className="relative w-40 h-40 md:w-32 md:h-32 rounded-2xl overflow-hidden border border-white/[0.05] group-hover:border-brand/50 transition-all duration-700 bg-surface/20 backdrop-blur-md shadow-2xl mx-auto">
                       <Image
                         src={step.image}
                         alt={step.title}

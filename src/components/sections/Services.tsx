@@ -127,7 +127,8 @@ export function Services() {
 
   return (
     <section id="servicos" className="py-20 md:py-32 relative bg-background overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand opacity-[0.02] rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="ambient-glow -top-[20%] -left-[10%] opacity-40"></div>
+      <div className="ambient-glow -bottom-[10%] -right-[10%] opacity-20"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16 text-center md:text-left">
@@ -167,9 +168,9 @@ export function Services() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
               onClick={() => handleServiceClick(service)}
-              className={`group relative aspect-[3/2] rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:-translate-y-1 border ${
-                activeService?.title === service.title ? 'border-brand ring-2 ring-brand/20' : 'border-white/10'
-              } hover:border-brand/40 bg-surface cursor-pointer min-w-[78vw] md:min-w-0`}
+              className={`group relative aspect-[3/2] rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 hover:-translate-y-1 border ${
+                activeService?.title === service.title ? 'border-brand ring-4 ring-brand/5' : 'border-white/[0.03]'
+              } hover:border-brand/30 bg-surface/40 backdrop-blur-sm cursor-pointer min-w-[78vw] md:min-w-0`}
             >
               <Image
                 src={service.image}

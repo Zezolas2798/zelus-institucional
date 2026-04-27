@@ -5,11 +5,12 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #080808;
+  --background: #0a0a0b;
   --foreground: #FEFEFE;
   --brand: #FE615E;
-  --surface: #121212;
-  --text-muted: #C8C8C9;
+  --surface: #141415;
+  --text-muted: #A0A0A1;
+  --brand-glow: rgba(254, 97, 94, 0.03);
   
   --card: #121212;
   --card-foreground: #FEFEFE;
@@ -25,8 +26,8 @@
   --accent-foreground: #FEFEFE;
   --destructive: #ef4444;
   --destructive-foreground: #FEFEFE;
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.05);
+  --input: rgba(255, 255, 255, 0.05);
   --ring: #FE615E;
   --radius: 0.5rem;
 
@@ -162,8 +163,19 @@
 
   .glass-mobile-fix {
     @media (max-width: 768px) {
-      background-color: rgba(255, 255, 255, 0.08) !important;
+      background-color: rgba(255, 255, 255, 0.05) !important;
       backdrop-filter: blur(20px) !important;
     }
+  }
+
+  .ambient-glow {
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, var(--brand-glow) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(80px);
   }
 }

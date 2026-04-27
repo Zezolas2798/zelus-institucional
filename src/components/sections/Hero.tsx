@@ -36,7 +36,7 @@ export function Hero() {
             Consultoria estratégica em segurança de alimentos e gestão financeira
           </span>
 
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-normal text-foreground/80 tracking-tight mb-8 leading-tight drop-shadow-lg">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-normal text-foreground/80 tracking-tight mb-8 leading-tight">
             O lucro do seu negócio se constrói com
           </h1>
 
@@ -50,7 +50,7 @@ export function Hero() {
                 className="object-contain brightness-0 invert" 
               />
             </div>
-            <span className="font-branding text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-foreground font-bold tracking-[0.2em] uppercase leading-none drop-shadow-2xl">
+            <span className="font-branding text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-foreground font-bold tracking-[0.2em] uppercase leading-none">
               ZELUS
             </span>
           </div>
@@ -61,7 +61,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row justify-center gap-6"
           >
-            <LeadButton className="px-12 py-4 bg-brand text-[#050505] font-bold rounded-full hover:bg-[#ff7a77] transition-all duration-300 shadow-xl shadow-brand/20 hover:scale-105">
+            <LeadButton className="px-12 py-4 bg-brand text-[#050505] font-bold rounded-full hover:bg-[#ff7a77] transition-all duration-300 hover:scale-105">
               Falar com especialista
             </LeadButton>
           </ScrollReveal>
