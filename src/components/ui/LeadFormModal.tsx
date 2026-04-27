@@ -136,12 +136,21 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors appearance-none"
                 >
                   <option value="" disabled>Selecione seu segmento...</option>
-                  <option value="Restaurante">Restaurante</option>
-                  <option value="Hamburgueria">Hamburgueria</option>
+                  <option value="Restaurante / Bistrô">Restaurante / Bistrô</option>
+                  <option value="Hamburgueria / Fast Food">Hamburgueria / Fast Food</option>
+                  <option value="Pizzaria">Pizzaria</option>
                   <option value="Padaria / Confeitaria">Padaria / Confeitaria</option>
+                  <option value="Café / Cafeteria">Café / Cafeteria</option>
+                  <option value="Buffet / Eventos">Buffet / Eventos</option>
+                  <option value="Cozinha Industrial">Cozinha Industrial</option>
+                  <option value="Refeitório Corporativo">Refeitório Corporativo</option>
                   <option value="Indústria de Alimentos">Indústria de Alimentos</option>
-                  <option value="Cozinha Industrial">Cozinha Industrial / Refeitório</option>
-                  <option value="Supermercado">Supermercado (Açougue, Frios)</option>
+                  <option value="Supermercado">Supermercado</option>
+                  <option value="Açougue / Peixaria">Açougue / Peixaria</option>
+                  <option value="Hortifruti">Hortifruti</option>
+                  <option value="Hotelaria">Hotelaria</option>
+                  <option value="Escola / Creche">Escola / Creche</option>
+                  <option value="Hospital / Clínica">Hospital / Clínica</option>
                   <option value="Outro">Outro</option>
                 </select>
               </div>
