@@ -71,74 +71,93 @@ export function Metodologia() {
           </ScrollReveal>
         </div>
 
-        <div className="relative min-h-[500px] md:min-h-[600px]">
-          {/* SVG Zigzag Line (Desktop only) - Connecting Numbers statically */}
-          <div className="hidden md:block absolute inset-0 pointer-events-none z-10">
-            <svg viewBox="0 0 1280 600" className="w-full h-full" preserveAspectRatio="none">
-              <motion.path
-                d="M 84,40 L 404,200 L 724,40 L 1044,200"
-                fill="none"
-                stroke="var(--brand)"
-                strokeWidth="2.5"
-                strokeDasharray="8 4"
-                initial={{ pathLength: 1, opacity: 0.4 }}
-              />
-              {/* Connector Points exactly at numbers */}
-              <circle cx="84" cy="40" r="6" fill="var(--brand)" className="opacity-80" />
-              <circle cx="404" cy="200" r="6" fill="var(--brand)" className="opacity-80" />
-              <circle cx="724" cy="40" r="6" fill="var(--brand)" className="opacity-80" />
-              <circle cx="1044" cy="200" r="6" fill="var(--brand)" className="opacity-80" />
-            </svg>
-          </div>
+          <div className="mobile-carousel md:grid md:grid-cols-4 md:gap-4 md:justify-items-center scrollbar-hide md:items-start relative z-20 overflow-x-auto min-h-[500px] md:min-h-[600px]">
+            {/* 
+                SVG Zigzag Line - Desktop & Mobile 
+                Placed inside the scrollable container to move with cards on mobile
+            */}
+            <div className="absolute inset-0 pointer-events-none z-10 overflow-visible min-w-max md:min-w-0">
+              {/* Desktop SVG - Precise alignment with number tags */}
+              <svg viewBox="0 0 1280 600" className="hidden md:block w-full h-full" preserveAspectRatio="none">
+                <motion.path
+                  d="M 84,40 L 404,200 L 724,40 L 1044,200"
+                  fill="none"
+                  stroke="var(--brand)"
+                  strokeWidth="2.5"
+                  strokeDasharray="8 4"
+                  initial={{ pathLength: 1, opacity: 0.4 }}
+                />
+                <circle cx="84" cy="40" r="6" fill="var(--brand)" className="opacity-80" />
+                <circle cx="404" cy="200" r="6" fill="var(--brand)" className="opacity-80" />
+                <circle cx="724" cy="40" r="6" fill="var(--brand)" className="opacity-80" />
+                <circle cx="1044" cy="200" r="6" fill="var(--brand)" className="opacity-80" />
+              </svg>
 
-          <div className="mobile-carousel md:grid md:grid-cols-4 md:gap-4 md:justify-items-center scrollbar-hide md:items-start relative z-20">
-            {steps.map((step, idx) => {
-              const isEven = idx % 2 === 0;
-              return (
-                <div 
-                  key={idx} 
-                  className={`flex flex-col items-center md:items-start text-center md:text-left transition-all duration-700 min-w-[85vw] md:min-w-0 px-4 md:px-0 ${
-                    !isEven ? 'md:mt-40' : ''
-                  }`}
-                >
-                  <ScrollReveal transition={{ delay: idx * 0.1 }}>
-                    <Link href={step.link} className="group relative block">
-                      {/* Number tag - Exact connection point */}
-                      <span className="absolute -top-3 -left-3 z-30 w-8 h-8 bg-surface border border-brand rounded-full flex items-center justify-center text-[10px] font-branding text-brand group-hover:bg-brand group-hover:text-background transition-all duration-500 shadow-[0_0_20px_rgba(254,97,94,0.4)]">
-                        {step.num}
-                      </span>
+              {/* Mobile SVG - Optimized for 4-card scroll */}
+              <div className="md:hidden flex h-full" style={{ width: 'calc(340vw + 6rem)' }}>
+                <svg viewBox="0 0 1000 600" className="w-full h-full" preserveAspectRatio="none">
+                  <path
+                    d="M 120,40 L 370,180 L 620,40 L 870,180"
+                    fill="none"
+                    stroke="var(--brand)"
+                    strokeWidth="3"
+                    strokeDasharray="10 5"
+                    className="opacity-40"
+                  />
+                  <circle cx="120" cy="40" r="8" fill="var(--brand)" />
+                  <circle cx="370" cy="180" r="8" fill="var(--brand)" />
+                  <circle cx="620" cy="40" r="8" fill="var(--brand)" />
+                  <circle cx="870" cy="180" r="8" fill="var(--brand)" />
+                </svg>
+              </div>
+            </div>
+
+          {steps.map((step, idx) => {
+            const isEven = idx % 2 === 0;
+            return (
+              <div 
+                key={idx} 
+                className={`flex flex-col items-center md:items-start text-center md:text-left transition-all duration-700 min-w-[85vw] md:min-w-0 px-4 md:px-0 relative z-20 ${
+                  !isEven ? 'mt-24 md:mt-40' : 'mt-0'
+                }`}
+              >
+                <ScrollReveal transition={{ delay: idx * 0.1 }}>
+                  <Link href={step.link} className="group relative block">
+                    {/* Number tag - Exact connection point */}
+                    <span className="absolute -top-3 -left-3 z-30 w-8 h-8 bg-surface border border-brand rounded-full flex items-center justify-center text-[10px] font-branding text-brand group-hover:bg-brand group-hover:text-background transition-all duration-500 shadow-[0_0_20px_rgba(254,97,94,0.4)]">
+                      {step.num}
+                    </span>
+                    
+                    {/* Card Image */}
+                    <div className="relative w-36 h-36 md:w-32 md:h-32 rounded-2xl overflow-hidden border border-white/10 group-hover:border-brand transition-all duration-700 bg-surface/30 backdrop-blur-sm shadow-2xl">
+                      <Image
+                        src={step.image}
+                        alt={step.title}
+                        fill
+                        className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-80"></div>
+                    </div>
+
+                    {/* Content Below */}
+                    <div className="mt-8 md:pr-4">
+                      <h3 className="text-lg font-bold text-foreground mb-3 uppercase tracking-tight group-hover:text-brand transition-colors">
+                        {step.title}
+                      </h3>
+                      <p className="text-[13px] text-text-muted leading-relaxed font-light mb-4 line-clamp-3">
+                        {step.desc}
+                      </p>
                       
-                      {/* Card Image */}
-                      <div className="relative w-36 h-36 md:w-32 md:h-32 rounded-2xl overflow-hidden border border-white/10 group-hover:border-brand transition-all duration-700 bg-surface/30 backdrop-blur-sm shadow-2xl">
-                        <Image
-                          src={step.image}
-                          alt={step.title}
-                          fill
-                          className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-80"></div>
+                      <div className="inline-flex items-center gap-2 text-[9px] uppercase tracking-widest font-bold text-brand group-hover:text-foreground transition-colors">
+                        Saber mais
+                        <div className="w-4 h-[1px] bg-brand group-hover:w-8 group-hover:bg-foreground transition-all"></div>
                       </div>
-
-                      {/* Content Below */}
-                      <div className="mt-8 md:pr-4">
-                        <h3 className="text-lg font-bold text-foreground mb-3 uppercase tracking-tight group-hover:text-brand transition-colors">
-                          {step.title}
-                        </h3>
-                        <p className="text-[13px] text-text-muted leading-relaxed font-light mb-4 line-clamp-3">
-                          {step.desc}
-                        </p>
-                        
-                        <div className="inline-flex items-center gap-2 text-[9px] uppercase tracking-widest font-bold text-brand group-hover:text-foreground transition-colors">
-                          Saber mais
-                          <div className="w-4 h-[1px] bg-brand group-hover:w-8 group-hover:bg-foreground transition-all"></div>
-                        </div>
-                      </div>
-                    </Link>
-                  </ScrollReveal>
-                </div>
-              );
-            })}
-          </div>
+                    </div>
+                  </Link>
+                </ScrollReveal>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

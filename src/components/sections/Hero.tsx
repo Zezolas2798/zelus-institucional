@@ -75,7 +75,6 @@ export function Hero() {
         transition={{ delay: 2, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-text-muted flex flex-col items-center gap-2"
       >
-        <span className="text-[10px] uppercase tracking-[0.3em] font-branding">Scroll</span>
         <ChevronDown size={20} className="animate-bounce" />
       </ScrollReveal>
     </section>
