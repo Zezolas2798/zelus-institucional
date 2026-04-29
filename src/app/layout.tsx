@@ -45,8 +45,17 @@ export const metadata: Metadata = {
     description: "Segurança de Alimentos e Gestão Financeira baseada em dados.",
   },
   icons: {
-    icon: "/logos/zelus-icon-official-white.png",
-    apple: "/logos/apple-touch-icon.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
+  appleWebApp: {
+    title: "ZELUS",
+    statusBarStyle: "black-translucent",
   },
 };
 
