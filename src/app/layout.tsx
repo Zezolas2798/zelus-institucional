@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Montserrat, DM_Sans, Syncopate, Geist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -43,6 +44,10 @@ export const metadata: Metadata = {
     title: "ZELUS | Consultoria Alimentar Inteligente",
     description: "Segurança de Alimentos e Gestão Financeira baseada em dados.",
   },
+  icons: {
+    icon: "/logos/zelus-icon-official-white.png",
+    apple: "/logos/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -52,6 +57,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={cn("scroll-smooth", "font-sans", geist.variable)}>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-KF618E0T6Y"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-KF618E0T6Y');
+          `}
+        </Script>
+      </head>
       <body
         className={`${montserrat.variable} ${dmSans.variable} ${syncopate.variable} antialiased`}
       >
