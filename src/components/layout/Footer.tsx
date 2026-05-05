@@ -18,7 +18,7 @@ export function Footer() {
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-text-muted/40 text-[10px] tracking-[0.4em] uppercase font-branding">ZELUS | Autoridade em Soluções Alimentares</p>
-          <p className="text-text-muted/20 text-[9px] uppercase tracking-widest">© {currentYear} Zelus Consultoria Alimentar</p>
+          <p className="text-text-muted/20 text-[9px] uppercase tracking-widest">© {currentYear} Zelus Consultoria de Alimentos e Negócios</p>
         </div>
       </div>
     </footer>

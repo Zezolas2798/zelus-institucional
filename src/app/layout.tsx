@@ -26,13 +26,13 @@ const syncopate = Syncopate({
 });
 
 export const metadata: Metadata = {
-  title: "ZELUS | Consultoria Alimentar Inteligente",
+  title: "ZELUS | Consultoria de Alimentos e Negócios",
   description: "A ZELUS transforma inteligência técnica em lucro operacional. Segurança de Alimentos e Gestão Financeira baseada em dados para negócios de alimentação.",
-  keywords: ["consultoria alimentar", "segurança de alimentos", "gestão financeira", "controle de CMV", "restaurantes", "food service"],
+  keywords: ["consultoria de alimentos", "segurança de alimentos", "gestão financeira", "consultoria de negócios", "gestão de restaurantes", "controle de CMV", "food service", "lucro operacional"],
   authors: [{ name: "ZELUS" }],
   themeColor: "#080808",
   openGraph: {
-    title: "ZELUS | Consultoria Alimentar Inteligente",
+    title: "ZELUS | Consultoria de Alimentos e Negócios",
     description: "Segurança de Alimentos e Gestão Financeira baseada em dados para blindar sua operação e maximizar seus lucros.",
     url: "https://zelus.com.br",
     siteName: "ZELUS",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZELUS | Consultoria Alimentar Inteligente",
+    title: "ZELUS | Consultoria de Alimentos e Negócios",
     description: "Segurança de Alimentos e Gestão Financeira baseada em dados.",
   },
   icons: {
