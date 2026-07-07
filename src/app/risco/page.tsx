@@ -21,7 +21,6 @@ export default function RiscoPage() {
           highlight="Sanitário"
           subtitle="Proteja seu Negócio e seus Clientes"
           image="/elementos/Gemini_Generated_Image_inb4deinb4deinb4.webp"
-          stepNumber="02"
         />
 
         {/* Article Content */}

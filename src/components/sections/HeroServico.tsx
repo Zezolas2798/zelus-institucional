@@ -10,7 +10,7 @@ interface HeroServicoProps {
   subtitle: string;
   highlight: string;
   image: string;
-  stepNumber: string;
+  stepNumber?: string;
 }
 
 export function HeroServico({ title, subtitle, highlight, image, stepNumber }: HeroServicoProps) {
@@ -30,13 +30,15 @@ export function HeroServico({ title, subtitle, highlight, image, stepNumber }: H
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         <div className="max-w-4xl mx-auto text-center">
-          <motion.span 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-brand font-branding text-[10px] tracking-[0.5em] uppercase mb-6 block"
-          >
-            Metodologia ZELUS | {stepNumber}
-          </motion.span>
+          {stepNumber && (
+            <motion.span 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-brand font-branding text-[10px] tracking-[0.5em] uppercase mb-6 block"
+            >
+              Metodologia ZELUS | {stepNumber}
+            </motion.span>
+          )}
           
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}

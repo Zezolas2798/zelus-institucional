@@ -22,7 +22,6 @@ export default function ProcessosPage() {
           highlight="Caóticos"
           subtitle="Da Desorganização à Liberdade"
           image="/elementos/Card Implementação Ativa.webp"
-          stepNumber="04"
         />
 
         {/* Article Content */}

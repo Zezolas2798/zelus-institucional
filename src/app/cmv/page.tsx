@@ -21,7 +21,6 @@ export default function CMVPage() {
           highlight="Descontrolado"
           subtitle="Onde o seu lucro está escorrendo?"
           image="/elementos/Gemini_Generated_Image_lpbfp7lpbfp7lpbf (1).webp"
-          stepNumber="01"
         />
 
         {/* Article Content */}
