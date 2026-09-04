@@ -6,8 +6,8 @@ import { LeadButton } from "@/components/ui/LeadButton";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Implementação Ativa | ZELUS",
-  description: "Transformando planejamento em realidade com treinamentos práticos e padronização operacional.",
+  title: "Implementação e Treinamento Operacional | ZELUS Campinas e Sorocaba",
+  description: "Transformamos planejamento em realidade com treinamentos práticos, padronização de processos e nova cultura de excelência para food service em Campinas e Sorocaba.",
 };
 
 export default function ImplementacaoPage() {

@@ -7,8 +7,8 @@ import { LeadButton } from "@/components/ui/LeadButton";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Melhoria Contínua | ZELUS",
-  description: "Evolução e crescimento sustentável. Consolidamos os resultados e identificamos novas oportunidades para o seu negócio evoluir.",
+  title: "Melhoria Contínua para Food Service | ZELUS Campinas e Sorocaba",
+  description: "Evolução e crescimento sustentável. Consolidamos resultados e identificamos novas oportunidades para restaurantes e bares em Campinas e Sorocaba.",
 };
 
 export default function MelhoriaPage() {

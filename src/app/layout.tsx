@@ -4,6 +4,7 @@ import { Montserrat, DM_Sans, Syncopate, Geist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Preloader } from "@/components/layout/Preloader";
+import { CookieBanner } from "@/components/layout/CookieBanner";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -25,24 +26,82 @@ const syncopate = Syncopate({
   weight: ["400", "700"],
 });
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "ZELUS Consultoria de Alimentos e Negócios",
+  "description": "Consultoria especializada em segurança de alimentos e gestão financeira para restaurantes, bares e food service em Campinas e Sorocaba.",
+  "url": "https://zelus.com.br",
+  "telephone": "+55-15-99146-4088",
+  "email": "zelusfsconsultoria@gmail.com",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Campinas",
+      "containedInPlace": { "@type": "State", "name": "São Paulo" }
+    },
+    {
+      "@type": "City",
+      "name": "Sorocaba",
+      "containedInPlace": { "@type": "State", "name": "São Paulo" }
+    }
+  ],
+  "serviceType": [
+    "Consultoria de Alimentos",
+    "Segurança Alimentar",
+    "Gestão Financeira para Restaurantes",
+    "Controle de CMV",
+    "Engenharia de Cardápio",
+    "Manual de Boas Práticas",
+    "Rotulagem Nutricional",
+    "Auditorias de Qualidade",
+    "Treinamento em Boas Práticas"
+  ],
+  "priceRange": "$$",
+  "image": "https://zelus.com.br/images/og-image.png",
+  "logo": "https://zelus.com.br/logos/zelus-icon-official.svg",
+  "sameAs": [
+    "https://www.instagram.com/zelus_consultoria/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+55-15-99146-4088",
+    "contactType": "sales",
+    "availableLanguage": "Portuguese"
+  }
+};
+
 export const metadata: Metadata = {
-  title: "ZELUS | Consultoria de Alimentos e Negócios",
-  description: "A ZELUS transforma inteligência técnica em lucro operacional. Segurança de Alimentos e Gestão Financeira baseada em dados para negócios de alimentação.",
-  keywords: ["consultoria de alimentos", "segurança de alimentos", "gestão financeira", "consultoria de negócios", "gestão de restaurantes", "controle de CMV", "food service", "lucro operacional"],
+  title: "ZELUS | Consultoria de Alimentos em Campinas e Sorocaba",
+  description: "Consultoria especializada em segurança de alimentos e gestão financeira para restaurantes, bares e food service em Campinas, Sorocaba e região. Diagnóstico 360° gratuito.",
+  keywords: [
+    "consultoria de alimentos", "segurança alimentar", "gestão financeira restaurante",
+    "controle de CMV", "food service", "engenharia de cardápio", "manual de boas práticas",
+    "rotulagem nutricional", "ficha técnica de alimentos", "auditoria sanitária"
+  ],
   authors: [{ name: "ZELUS" }],
   themeColor: "#080808",
   openGraph: {
-    title: "ZELUS | Consultoria de Alimentos e Negócios",
-    description: "Segurança de Alimentos e Gestão Financeira baseada em dados para blindar sua operação e maximizar seus lucros.",
+    title: "ZELUS | Consultoria de Alimentos em Campinas e Sorocaba",
+    description: "Segurança de Alimentos e Gestão Financeira para restaurantes, bares e food service em Campinas e Sorocaba. Diagnóstico 360° gratuito.",
     url: "https://zelus.com.br",
     siteName: "ZELUS",
     locale: "pt_BR",
     type: "website",
+    images: [
+      {
+        url: "https://zelus.com.br/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "ZELUS - Consultoria em Serviços de A&B",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZELUS | Consultoria de Alimentos e Negócios",
-    description: "Segurança de Alimentos e Gestão Financeira baseada em dados.",
+    title: "ZELUS | Consultoria de Alimentos em Campinas e Sorocaba",
+    description: "Segurança de Alimentos e Gestão Financeira para food service em Campinas e Sorocaba.",
+    images: ["https://zelus.com.br/images/og-image.png"],
   },
   icons: {
     icon: [
@@ -57,6 +116,9 @@ export const metadata: Metadata = {
   appleWebApp: {
     title: "ZELUS",
     statusBarStyle: "black-translucent",
+  },
+  alternates: {
+    canonical: "https://zelus.com.br",
   },
   robots: {
     index: true,
@@ -79,6 +141,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={cn("scroll-smooth", "font-sans", geist.variable)}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-KF618E0T6Y"
           strategy="afterInteractive"
@@ -87,9 +153,30 @@ export default function RootLayout({
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
 
-            gtag('config', 'G-KF618E0T6Y');
+            // Define config to prevent sending hits before consent
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'analytics_storage': 'denied'
+            });
+            
+            // Listen for the custom event from CookieBanner
+            window.addEventListener('cookiesAccepted', function() {
+              gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+              });
+              gtag('js', new Date());
+              gtag('config', 'G-KF618E0T6Y');
+            });
+
+            // Fallback for when the component initializes and already has consent
+            if (typeof window !== 'undefined' && localStorage.getItem('zelus_cookie_consent') === 'accepted') {
+              gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+              });
+              gtag('js', new Date());
+              gtag('config', 'G-KF618E0T6Y');
+            }
           `}
         </Script>
       </head>
@@ -98,6 +185,7 @@ export default function RootLayout({
       >
         <Preloader />
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

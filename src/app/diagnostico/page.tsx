@@ -7,8 +7,8 @@ import { LeadButton } from "@/components/ui/LeadButton";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Diagnóstico 360º | ZELUS",
-  description: "O ponto de partida para a transformação do seu negócio. Um raio-x completo da sua operação para identificar falhas e oportunidades.",
+  title: "Diagnóstico 360° para Restaurantes | ZELUS Campinas e Sorocaba",
+  description: "Raio-x completo da sua operação: financeiro, sanitário e processos. Diagnóstico presencial para restaurantes e food service em Campinas e Sorocaba.",
 };
 
 export default function DiagnosticoPage() {

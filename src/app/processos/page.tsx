@@ -7,8 +7,8 @@ import { LeadButton } from "@/components/ui/LeadButton";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Padronização e Processos Operacionais | ZELUS",
-  description: "Crie uma operação independente e eficiente. Padronizamos sua produção para garantir qualidade constante e liberdade para o dono.",
+  title: "Padronização de Processos Operacionais | ZELUS Campinas e Sorocaba",
+  description: "Crie uma operação independente e eficiente. Fichas técnicas, POPs e padronização de produção para restaurantes em Campinas e Sorocaba.",
 };
 
 export default function ProcessosPage() {

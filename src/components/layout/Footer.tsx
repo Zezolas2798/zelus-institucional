@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,9 +17,27 @@ export function Footer() {
             className="object-contain" 
           />
         </div>
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-text-muted/40 text-[10px] tracking-[0.4em] uppercase font-branding">ZELUS | Autoridade em Soluções Alimentares</p>
-          <p className="text-text-muted/20 text-[9px] uppercase tracking-widest">© {currentYear} Zelus Consultoria de Alimentos e Negócios</p>
+        <div className="flex flex-col items-center gap-6 mb-8">
+          <p className="text-text-muted/60 text-xs tracking-[0.2em] uppercase font-branding text-center">
+            ZELUS | Segurança de Alimentos e Gestão para Food Service
+          </p>
+          <div className="flex flex-col md:flex-row items-center gap-4 text-text-muted/40 text-xs font-sans">
+            <span>Campinas e Sorocaba — Interior de São Paulo</span>
+            <span className="hidden md:inline">•</span>
+            <a href="tel:+5515991464088" className="hover:text-primary transition-colors">(15) 99146-4088</a>
+            <span className="hidden md:inline">•</span>
+            <a href="mailto:zelusfsconsultoria@gmail.com" className="hover:text-primary transition-colors">zelusfsconsultoria@gmail.com</a>
+            <span className="hidden md:inline">•</span>
+            <a href="https://www.instagram.com/zelus_consultoria/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">@zelus_consultoria</a>
+          </div>
+        </div>
+        <div className="flex flex-col items-center gap-4 pt-6 border-t border-white/5">
+          <div className="flex gap-4">
+            <Link href="/privacidade" className="text-text-muted/60 hover:text-brand text-xs transition-colors">
+              Política de Privacidade
+            </Link>
+          </div>
+          <p className="text-text-muted/20 text-[9px] uppercase tracking-widest">© 2026 Zelus Consultoria de Alimentos e Negócios</p>
         </div>
       </div>
     </footer>

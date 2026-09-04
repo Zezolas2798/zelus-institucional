@@ -6,8 +6,8 @@ import { LeadButton } from "@/components/ui/LeadButton";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Risco Sanitário | ZELUS",
-  description: "Proteja seu negócio e seus clientes. Garantimos conformidade sanitária total para eliminar riscos de multas e interdições.",
+  title: "Segurança Alimentar e Risco Sanitário | ZELUS Campinas e Sorocaba",
+  description: "Conformidade sanitária total: Manual de Boas Práticas, alvará da vigilância sanitária, auditorias e certificações para food service em Campinas e Sorocaba.",
 };
 
 export default function RiscoPage() {

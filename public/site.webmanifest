@@ -1,6 +1,9 @@
 {
   "name": "ZELUS | Consultoria de Alimentos e Negócios",
   "short_name": "ZELUS",
+  "description": "Segurança de Alimentos e Gestão para Food Service em Campinas e Sorocaba",
+  "lang": "pt-BR",
+  "start_url": "/",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",

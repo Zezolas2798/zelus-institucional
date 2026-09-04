@@ -6,8 +6,8 @@ import { LeadButton } from "@/components/ui/LeadButton";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CMV Descontrolado | ZELUS",
-  description: "Onde o seu lucro está escorrendo? Identificamos e eliminamos desperdícios para aumentar sua margem de lucro real.",
+  title: "Controle de CMV para Restaurantes | ZELUS Campinas e Sorocaba",
+  description: "Seu lucro está escorrendo? Identificamos e eliminamos desperdícios com controle de CMV, engenharia de cardápio e precificação inteligente em Campinas e Sorocaba.",
 };
 
 export default function CMVPage() {

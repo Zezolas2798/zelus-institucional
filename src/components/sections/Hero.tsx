@@ -37,7 +37,7 @@ export function Hero() {
           </span>
 
           <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-normal text-foreground/80 tracking-tight mb-8 leading-tight">
-            O lucro do seu negócio se constrói com
+            Consultoria de Alimentos e Gestão Financeira em Campinas e Sorocaba
           </h1>
 
           <div className="flex items-center justify-center gap-4 md:gap-5 mt-4 mb-16">

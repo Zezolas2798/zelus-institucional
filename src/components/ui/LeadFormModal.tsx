@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send } from "lucide-react";
-import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 interface LeadFormModalProps {
   isOpen: boolean;
@@ -31,6 +31,7 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
     telefone: "",
     segmento: "",
     desafio_principal: "",
+    consentimento: false,
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -38,39 +39,33 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
     setIsSubmitting(true);
 
     try {
-      // 1. Salvar no Supabase
-      const { error } = await supabase.from("leads").insert([
-        {
-          origem: "Site",
-          status: "Novo",
+      // Send data to secure server-side API route
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
           nome_responsavel: formData.nome_responsavel,
           telefone: formData.telefone,
           segmento: formData.segmento,
           desafio_principal: formData.desafio_principal,
-        },
-      ]);
+        }),
+      });
 
-      if (error) {
-        console.error("Erro ao salvar lead:", error);
-        // Mesmo com erro, não vamos bloquear o cliente de ir pro WhatsApp
+      if (!res.ok) {
+        // Don't expose internal error details to console
       }
 
-      // 2. Montar mensagem pré-preenchida pro WhatsApp (opcional com QR, mas vamos usar o link direto solicitado)
-      const text = `Olá, equipe ZELUS! Meu nome é ${formData.nome_responsavel}, sou do segmento de ${formData.segmento}. Gostaria de entender como a consultoria de vocês pode me ajudar com o seguinte desafio: ${formData.desafio_principal}.`;
-      const waUrl = `https://wa.me/qr/2WOCVA4LV4JIO1?text=${encodeURIComponent(text)}`;
-
-      // 3. Redirecionar para página de obrigado
+      // Redirect to thank-you page
       router.push("/obrigado");
-      
-      // Fechar modal
       onClose();
 
-    } catch (err) {
-      console.error(err);
+    } catch {
+      // Silent fail — user already redirected or can retry
     } finally {
       setIsSubmitting(false);
     }
   };
+
 
   return (
     <AnimatePresence>
@@ -165,6 +160,23 @@ export function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors resize-none"
                   placeholder="Ex: Quero padronizar meus processos, estou perdendo muito dinheiro com desperdício, quero me preparar para a vigilância..."
                 />
+              </div>
+
+              <div className="flex items-start gap-3 mt-4 mb-2">
+                <input
+                  type="checkbox"
+                  id="consentimento"
+                  required
+                  checked={formData.consentimento}
+                  onChange={(e) => setFormData({ ...formData, consentimento: e.target.checked })}
+                  className="mt-1 w-4 h-4 rounded border-white/10 bg-background text-brand focus:ring-brand accent-brand shrink-0"
+                />
+                <label htmlFor="consentimento" className="text-xs text-text-muted leading-relaxed">
+                  Concordo com o tratamento dos meus dados para contato comercial, de acordo com a{" "}
+                  <Link href="/privacidade" onClick={onClose} className="text-brand hover:underline">
+                    Política de Privacidade
+                  </Link>.
+                </label>
               </div>
 
               <button

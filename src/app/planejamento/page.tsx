@@ -7,8 +7,8 @@ import { LeadButton } from "@/components/ui/LeadButton";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Planejamento e Quick Wins | ZELUS",
-  description: "Transformamos o diagnóstico em ações práticas. Implementamos soluções rápidas (Quick Wins) para alívio imediato na sua operação.",
+  title: "Planejamento Estratégico e Quick Wins | ZELUS Campinas e Sorocaba",
+  description: "Transformamos diagnóstico em ações práticas com soluções rápidas (Quick Wins) para alívio imediato na operação do seu restaurante em Campinas e Sorocaba.",
 };
 
 export default function PlanejamentoPage() {
