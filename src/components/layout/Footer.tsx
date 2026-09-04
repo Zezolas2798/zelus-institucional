@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Mail, Instagram, MessageCircle } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,11 +25,20 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center gap-4 text-text-muted/40 text-xs font-sans">
             <span>Campinas e Sorocaba — Interior de São Paulo</span>
             <span className="hidden md:inline">•</span>
-            <a href="tel:+5515991464088" className="hover:text-primary transition-colors">(15) 99146-4088</a>
+            <a href="tel:+5515991464088" className="hover:text-primary transition-colors flex items-center gap-1.5">
+              <MessageCircle className="w-3.5 h-3.5" />
+              (15) 99146-4088
+            </a>
             <span className="hidden md:inline">•</span>
-            <a href="mailto:zelusfsconsultoria@gmail.com" className="hover:text-primary transition-colors">zelusfsconsultoria@gmail.com</a>
+            <a href="mailto:zelusfsconsultoria@gmail.com" className="hover:text-primary transition-colors flex items-center gap-1.5">
+              <Mail className="w-3.5 h-3.5" />
+              zelusfsconsultoria@gmail.com
+            </a>
             <span className="hidden md:inline">•</span>
-            <a href="https://www.instagram.com/zelus_consultoria/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">@zelus_consultoria</a>
+            <a href="https://www.instagram.com/zelus_consultoria/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-1.5">
+              <Instagram className="w-3.5 h-3.5" />
+              @zelus_consultoria
+            </a>
           </div>
         </div>
         <div className="flex flex-col items-center gap-4 pt-6 border-t border-white/5">
